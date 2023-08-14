@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cookie&family=Crimson+Text&family=Poppins:ital,wght@0,500;1,300&family=Work+Sans:wght@100;400&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+
+  <script src="https://kit.fontawesome.com/b66a165bb9.js" crossorigin="anonymous" defer></script>
+</head>
+
+<body>
+  <div class="sidebar-form-container">
+    <!-- Sidebar Steps -->
+    <div class="sidebar">
+      <div class="step active" data-step="1">
+        <span class="step-number">1</span>
+        <span class="step-check">&#10004;</span>
+        <span class="step_content">Staffs</span>
+      </div>
+      <div class="step" data-step="2">
+        <span class="step-number">2</span>
+        <span class="step-check">&#10004;</span>
+        <span class="step_content">Services</span>
+      </div>
+      <div class="step" data-step="3">
+        <span class="step-number">3</span>
+        <span class="step-check">&#10004;</span>
+        <span class="step_content">Date</span>
+      </div>
+      <div class="step" data-step="4">
+        <span class="step-number">4</span>
+        <span class="step-check">&#10004;</span>
+        <span class="step_content">Confirmation</span>
+      </div>
+    </div>
+
+
+    <form id="multiStepForm">
+      <!-- Step 1: Staff List -->
+      <div class="form-step" data-step="1">
+        <div class="staff_container">
+          <div class="container_head">
+            <h2>Select Staff:</h2>
+          </div>
+          <div class="card_container">
+            <div class="staff-card" data-staff="John">
+              <div class="card_image">
+                <img src="images/staff/1.png" alt="John's Image" />
+              </div>
+              <div class="card_content">
+                <p>Alex Rosetta</p>
+                <span>email:alexyrosetta@egmail.com</span>
+              </div>
+            </div>
+            <div class="staff-card" data-staff="Jane">
+              <div class="card_image">
+                <img src="images/staff/2.png" alt="Jane's Image" />
+              </div>
+              <div class="card_content">
+                <p>Maria July</p>
+                <span>email:mariajuly@egmail.com</span>
+              </div>
+            </div>
+          </div>
+          <div class="button_container">
+            <button type="button" class="next-btn">Next</button>
+          </div>
+        </div>
+        <div class="warning-card">
+          <div class="card_item">
+            <img src="./images/staff/error.png" alt="">
+            <span>Select staff</span>
+          </div>
+
+        </div>
+      </div>
+
+
+
+      <!-- Step 2-->
+      <div class="form-step" data-step="2">
+        <div class="service_container">
+          <div class="service_head">
+            <h2>Select Service:</h2>
+          </div>
+
+          <div class="services-container">
+            <!-- Services will be populated here using JavaScript -->
+          </div>
+
+          <div class="button_container">
+            <button type="button" class="prev-btn">Back</button>
+            <button type="button" class="next-btn">Next</button>
+          </div>
+        </div>
+        <div class="warning-card">
+          <div class="card_item">
+            <img src="./images/staff/error.png" alt="">
+            <span>Select Services</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Step 3: -->
+      <div class="form-step" data-step="3">
+        <div class="date_container">
+          <div class="date_header">
+            <h2>Select date & time</h2>
+          </div>
+          <div class="calendar_date_container">
+            <div class="calendar">
+              <div class="calendar-header">
+                <button id="prev__btn">&lt;</button>
+                <h2 id="month-year"></h2>
+                <button id="next__btn">&gt;</button>
+              </div>
+              <div class="calendar-days">
+                <div class="day">Sun</div>
+                <div class="day">Mon</div>
+                <div class="day">Tue</div>
+                <div class="day">Wed</div>
+                <div class="day">Thu</div>
+                <div class="day">Fri</div>
+                <div class="day">Sat</div>
+              </div>
+              <div class="calendar-body" id="calendar-body"></div>
+            </div>
+
+            <div class="time-slots">
+              <div class="slots_header">
+                <h3>Select Date</h3>
+              </div>
+              <div class="time">
+
+              </div>
+            </div>
+          </div>
+
+          <div class="button_container">
+            <button type="button" class="prev-btn">Back</button>
+            <button type="button" class="next-btn">Next</button>
+          </div>
+        </div>
+        <div class="warning-card">
+          <div class="card_item">
+            <img src="./images/staff/error.png" alt="">
+            <span>Select Services</span>
+          </div>
+
+        </div>
+      </div>
+
+
+      <!-- Step 4-->
+      <div class="form-step" data-step="4">
+        <div class="contact_container">
+          <div class="contact_header">
+            <h2>Confirm detailes</h2>
+          </div>
+          <div class="customer_form">
+            <form id="myForm">
+              <div class="top_input">
+                <div style="display: flex; flex-direction: column; row-gap: 10px;">
+                  <label for="firstname">First name <span>*</span></label>
+                  <input type="text" id="firstname" name="firstname">
+                </div>
+                <div style="display: flex; flex-direction: column; row-gap: 10px;">
+                  <label for="lastname">Last Name <span>*</span></label>
+                  <input type="text" id="lastname" name="lastname">
+                </div>
+              </div>
+              <div class="down_input">
+                <div style="display: flex; flex-direction: column; row-gap: 10px;">
+                  <label for="telephone">Telephone <span>*</span></label>
+                  <input type="tel" id="telephone" name="telephone">
+                </div>
+                <div style="display: flex; flex-direction: column; row-gap: 10px;">
+                  <label for="email">Email <span>*</span></label>
+                  <input type="email" id="email" name="email">
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="summary-card">
+            <div class="summary_head">
+              <h3>Note</h3>
+            </div>
+            <div class="summary_note">
+              <p>
+                Selected Staff: <span id="selectedStaff"></span>
+              </p>
+              <p>
+                Selected Service:
+                <span id="selectedService"></span>
+              </p>
+              <p>Staff <span id="selectedPrice"></span></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="button_container">
+          <button type="button" class="prev-btn">Back</button>
+          <button type="button" id="submitBtn">Confirm Booking</button>
+        </div>
+        <div id="completed-state" style="display:none">
+          <span>Confirmation successfully completed</span>
+        </div>
+      </div>
+
+
+    </form>
+  </div>
+
+
+
+
+  <script src="js/helper.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
